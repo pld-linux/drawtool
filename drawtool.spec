@@ -15,8 +15,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	netpbm-devel
 BuildRequires:	perl >= 5.5
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
