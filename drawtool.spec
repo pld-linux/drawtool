@@ -3,7 +3,7 @@ Summary:	Simple vector graphics creator (with stdin/out interface)
 Summary(pl):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
 Version:	3.2.2
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
@@ -13,8 +13,8 @@ Patch1:		%{name}-build.patch
 URL:		http://www.earth.li/projectpurple/progs/drawtool.html
 BuildRequires:	gtk+-devel
 BuildRequires:	netpbm-devel
-BuildRequires:	perl-devel >= 5.6.1
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl-devel >= 1:5.6.1
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
