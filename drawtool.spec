@@ -46,17 +46,17 @@ Group(pl):	X11/Aplikacje/Grafika
 
 %description perl
 Perl extensions for drawtool: PSDrawtool, SVGDrawtool and
-perltool%prep
+perltool.
 
 %description perl -l pl
-Perlowe rozszerzenia dla drawtoola: PSDrawtool, SVGDrawtool i perltool
+Perlowe rozszerzenia dla drawtoola: PSDrawtool, SVGDrawtool i perltool.
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
-%{__make} CFLAGS="%{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}" 
+%{__make} CFLAGS="%{rpmcflags}" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -70,8 +70,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 mv -f logo/utils logo-utils
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/* \
-	TODO README CHANGES 
+gzip -9nf TODO README CHANGES 
 
 %clean
 rm -rf $RPM_BUILD_ROOT
