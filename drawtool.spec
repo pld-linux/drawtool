@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc utils logo-utils
 %attr(755,root,root) %{_bindir}/logo
 %attr(755,root,root) %{_bindir}/drawtool
-%{_mandir}/man*/*.gz
+%{_mandir}/man*/*
 
 %files perl
 %defattr(644,root,root,755)
