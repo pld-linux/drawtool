@@ -3,20 +3,19 @@ Summary:	Simple vector graphics creator (with stdin/out interface)
 Summary(pl):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
 Version:	3.2.2
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
 # Source0-md5:	97ffd36c555d67f58fa50615afc28772
 Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-build.patch
 URL:		http://www.earth.li/projectpurple/progs/drawtool.html
 BuildRequires:	gtk+-devel
 BuildRequires:	netpbm-devel
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Drawtool is a simple application that reads in simple vector geometry
@@ -50,13 +49,15 @@ perltool.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 %{__make} install \
@@ -71,9 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/drawtool.pdf
-%doc TODO README CHANGES
-%doc utils logo-utils
+%doc TODO README CHANGES docs/drawtool.pdf utils logo-utils
 %attr(755,root,root) %{_bindir}/logo
 %attr(755,root,root) %{_bindir}/drawtool
 %{_mandir}/man*/*
