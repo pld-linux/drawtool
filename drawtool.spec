@@ -6,8 +6,6 @@ Version:	3.2.2
 Release:	4
 License:	GPL
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefile.patch
 URL:		http://www.earth.li/projectpurple/progs/drawtool.html
@@ -41,8 +39,6 @@ przegl±darka obrazków, notatnik do szybkiego zapisywania pomys³ów...
 Summary:	Perl extensions for drawtool
 Summary(pl):	Perlowe rozszerzenia dla drawtoola
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
 
 %description perl
 Perl extensions for drawtool: PSDrawtool, SVGDrawtool and
