@@ -3,7 +3,7 @@ Summary:	Simple vector graphics creator (with stdin/out interface)
 Summary(pl):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
 Version:	3.2.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Graphics
 Group(de):	X11/Applikationen/Grafik
