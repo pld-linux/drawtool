@@ -1,4 +1,4 @@
-%include        /usr/lib/rpm/macros.perl
+%include	/usr/lib/rpm/macros.perl
 Summary:	Simple vector graphics creator (with stdin/out interface)
 Summary(pl):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
