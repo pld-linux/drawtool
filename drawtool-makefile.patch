@@ -1,0 +1,87 @@
+diff -Naur drawtool-3.2.2/Makefile drawtool-3.2.2-p/Makefile
+--- drawtool-3.2.2/Makefile	Fri Feb 18 00:00:28 2000
++++ drawtool-3.2.2-p/Makefile	Thu Jul 13 19:28:47 2000
+@@ -5,25 +5,21 @@
+ 
+ all: stuff
+ stuff:
+-	(cd src && make)
+-	(cd logo && make)
++	make -C src
++	make -C logo
++
+ clean:
+ 	(cd src && make clean)
+ 	(cd logo && make clean)
+ 
+ install:
+-	$(INSTALL) src/drawtool $(BINDIR)
+-	chmod 755 $(BINDIR)/drawtool
+-	$(INSTALL) logo/logo $(BINDIR)
+-	chmod 755 $(BINDIR)/logo
+-	$(INSTALL) drawtool.n $(MANDIR)
+-	chmod 644 $(MANDIR)/drawtool.n
+-	$(INSTALL) psdrawtool/psdrawtool.pl $(BINDIR)
+-	$(INSTALL) svgdrawtool/svgdrawtool.pl $(BINDIR)
+-	$(INSTALL) psdrawtool/flip.pl $(BINDIR)
+-	$(INSTALL) perltool/perltool.pl $(BINDIR)
+-	@echo "To use macros, each user must copy the macros folder and the sample.drawtoolrc"
+-	@echo "Read the README!"
++	$(INSTALL) src/drawtool $(DESTDIR)$(BINDIR)
++	$(INSTALL) logo/logo $(DESTDIR)$(BINDIR)
++	$(INSTALL) drawtool.n $(DESTDIR)$(MANDIR)/drawtool.1
++	$(INSTALL) psdrawtool/psdrawtool.pl $(DESTDIR)$(BINDIR)
++	$(INSTALL) svgdrawtool/svgdrawtool.pl $(DESTDIR)$(BINDIR)
++	$(INSTALL) psdrawtool/flip.pl $(DESTDIR)$(BINDIR)
++	$(INSTALL) perltool/perltool.pl $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+ 	rm $(BINDIR)/drawtool
+diff -Naur drawtool-3.2.2/logo/Makefile drawtool-3.2.2-p/logo/Makefile
+--- drawtool-3.2.2/logo/Makefile	Sat Apr 17 02:31:35 1999
++++ drawtool-3.2.2-p/logo/Makefile	Thu Jul 13 19:34:47 2000
+@@ -1,6 +1,8 @@
+ # Makefile for logo
+ 
+-CC = gcc -O6 -Wall -g
++CC = gcc
++CFLAGS =
++LDFLAGS =
+ 
+ SRCS = turtle.c logo.c cmdline.c
+ OBJS = $(SRCS:.c=.o)
+@@ -12,7 +14,7 @@
+ 	$(CC) $*.c -c -o $*.o
+ 
+ logo: $(OBJS)
+-	$(CC) $(LIBS) $(SRCS) -o $@
++	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(SRCS) -o $@
+ 
+ clean: 
+ 	rm -f *~ *.o logo core
+diff -Naur drawtool-3.2.2/src/Makefile drawtool-3.2.2-p/src/Makefile
+--- drawtool-3.2.2/src/Makefile	Thu Jul  1 15:29:09 1999
++++ drawtool-3.2.2-p/src/Makefile	Thu Jul 13 19:36:41 2000
+@@ -1,6 +1,8 @@
+ # Makefile for drawtool
+ 
+-CC = gcc -Wall -O6 -g
++CC = gcc
++CFLAGS = 
++LDFLAGS =
+ 
+ SRCS = drawtool.c plot.c events.c cmdline.c getopt.c coloursel.c \
+        buttons.c parse.c widgets.c macromenu.c macros.c \
+@@ -11,10 +13,10 @@
+ all: drawtool
+ 
+ .c.o:
+-	$(CC) `gtk-config --cflags` -c $*.c -o $*.o
++	$(CC) `gtk-config --cflags` $(CFLAGS) -c $*.c -o $*.o
+ 
+ drawtool: $(OBJS)
+-	$(CC) $(LIBS) `gtk-config --libs` $(OBJS)  -o $@
++	$(CC) $(LIBS) `gtk-config --libs` $(LDFLAGS) $(OBJS)  -o $@
+ 
+ clean: 
+ 	rm -f *~ *.o drawtool
