@@ -1,0 +1,25 @@
+--- drawtool-3.2.2/src/drawtool.h.orig	1999-11-29 18:49:02.000000000 +0100
++++ drawtool-3.2.2/src/drawtool.h	2004-03-28 18:57:16.551344128 +0200
+@@ -56,8 +56,8 @@
+ gint stdin_func (GtkWidget *widget, gint src, GdkInputCondition cond);
+ 
+ char *cmdline(int argc,char *argv[],int *xsize,int *ysize,int *xoff,int *yoff,int *show,int *showW,int *inFilename,int *outFilename,int *dieOnEOF);
+-//int min(int a,int b); // TURN ME INTO A MACRO!!!
+-//int max(int a,int b); // TURN ME INTO A MACRO!!!
++#define max(a,b) ((a) > (b) ? (a) : (b))
++#define min(a,b) ((a) < (b) ? (a) : (b))
+ void handle_buttons(GtkWidget *w,gpointer d);
+ 
+ gint expose_event (GtkWidget *widget, GdkEventExpose *event);
+--- drawtool-3.2.2/src/macromenu.c.orig	1999-06-30 23:57:39.000000000 +0200
++++ drawtool-3.2.2/src/macromenu.c	2004-03-28 18:57:16.954282872 +0200
+@@ -7,9 +7,6 @@
+ #include <sys/dir.h>
+ #include "drawtool.h"
+ 
+-#define max(a,b) ((a) > (b) ? (a) : (b))
+-#define min(a,b) ((a) < (b) ? (a) : (b))
+-
+ extern int tag;
+ extern GtkWidget *darea;
+ static int mytag=-1;
