@@ -66,15 +66,13 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 mv -f logo/utils logo-utils
 
-gzip -9nf TODO README CHANGES
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc docs/drawtool.pdf
-%doc *.gz
+%doc TODO README CHANGES
 %doc utils logo-utils
 %attr(755,root,root) %{_bindir}/logo
 %attr(755,root,root) %{_bindir}/drawtool
