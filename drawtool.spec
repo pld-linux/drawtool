@@ -7,6 +7,7 @@ Release:	4
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.earth.li/projectpurple/files/%{name}-%{version}.tar.gz
+# Source0-md5:	97ffd36c555d67f58fa50615afc28772
 Patch0:		%{name}-makefile.patch
 URL:		http://www.earth.li/projectpurple/progs/drawtool.html
 BuildRequires:	gtk+-devel
