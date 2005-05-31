@@ -12,6 +12,7 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-build.patch
 URL:		http://www.earth.li/projectpurple/progs/drawtool.html
 BuildRequires:	gtk+-devel
+BuildRequires:	imlib-devel
 BuildRequires:	netpbm-devel
 BuildRequires:	perl-devel >= 1:5.6.1
 BuildRequires:	rpm-perlprov >= 4.1-13
