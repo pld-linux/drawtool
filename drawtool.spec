@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Simple vector graphics creator (with stdin/out interface)
-Summary(pl):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
+Summary(pl.UTF-8):   Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
 Version:	3.2.2
 Release:	6
@@ -26,24 +26,24 @@ output to bitmap files and Postscript. It can be used as a general
 purpose drawing program, a network whiteboard, a picture viewer or a
 scrapbook for quickly getting down ideas....
 
-%description -l pl
-Drawtool jest prost± aplikacj± która wczytuje opis prostej grafiki
-wektorowej ze standardowego wej¶cia i wy¶wietla j± w okienku GTK+.
-Analogicznie, wypisuje on dane na standardowe wyj¶cie w miarê jak
-obraz jest generowany za pomoc± myszki i u¿ytkownika. Wyj¶cie mo¿e te¿
-byæ generowane w formie bitmapy lib Postscriptu. Drawtool mo¿e byæ
-u¿ywany jako wszechstronny program do rysunków, sieciowy "whiteboard",
-przegl±darka obrazków, notatnik do szybkiego zapisywania pomys³ów...
+%description -l pl.UTF-8
+Drawtool jest prostÄ… aplikacjÄ… ktÃ³ra wczytuje opis prostej grafiki
+wektorowej ze standardowego wejÅ›cia i wyÅ›wietla jÄ… w okienku GTK+.
+Analogicznie, wypisuje on dane na standardowe wyjÅ›cie w miarÄ™ jak
+obraz jest generowany za pomocÄ… myszki i uÅ¼ytkownika. WyjÅ›cie moÅ¼e teÅ¼
+byÄ‡ generowane w formie bitmapy lib Postscriptu. Drawtool moÅ¼e byÄ‡
+uÅ¼ywany jako wszechstronny program do rysunkÃ³w, sieciowy "whiteboard",
+przeglÄ…darka obrazkÃ³w, notatnik do szybkiego zapisywania pomysÅ‚Ã³w...
 
 %package perl
 Summary:	Perl extensions for drawtool
-Summary(pl):	Perlowe rozszerzenia dla drawtoola
+Summary(pl.UTF-8):   Perlowe rozszerzenia dla drawtoola
 Group:		X11/Applications/Graphics
 
 %description perl
 Perl extensions for drawtool: PSDrawtool, SVGDrawtool and perltool.
 
-%description perl -l pl
+%description perl -l pl.UTF-8
 Perlowe rozszerzenia dla drawtoola: PSDrawtool, SVGDrawtool i
 perltool.
 
