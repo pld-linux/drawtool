@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Simple vector graphics creator (with stdin/out interface)
-Summary(pl.UTF-8):   Prosty program do grafiki wektorowej (z interfejsem stdin/out)
+Summary(pl.UTF-8):	Prosty program do grafiki wektorowej (z interfejsem stdin/out)
 Name:		drawtool
 Version:	3.2.2
 Release:	6
@@ -37,7 +37,7 @@ przeglądarka obrazków, notatnik do szybkiego zapisywania pomysłów...
 
 %package perl
 Summary:	Perl extensions for drawtool
-Summary(pl.UTF-8):   Perlowe rozszerzenia dla drawtoola
+Summary(pl.UTF-8):	Perlowe rozszerzenia dla drawtoola
 Group:		X11/Applications/Graphics
 
 %description perl
